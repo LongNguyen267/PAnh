@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#1e63d6">
+  <meta name="description" content="Thiệp chúc mừng ngày Nhà giáo Việt Nam 20/11 tương tác đặc biệt tri ân Thầy Cô.">
+
+  <!-- Open Graph metadata -->
+  <meta property="og:title" content="Thiệp chúc mừng ngày Nhà giáo Việt Nam 20/11">
+  <meta property="og:description" content="Món quà tinh thần tri ân Thầy Cô nhân ngày 20/11. Chạm để mở thiệp!">
+  <meta property="og:type" content="website">
+
+  <title>Thiệp 20/11</title>
+
+  <!-- Google Fonts hỗ trợ tiếng Việt: Dancing Script, Pacifico, Quicksand -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Pacifico&family=Quicksand:wght@400;500;600;700&display=swap&subset=vietnamese"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Nút điều khiển nhạc nền cố định ở góc trên bên phải -->
+  <button id="audio-toggle" class="audio-btn" aria-label="Bật/Tắt âm thanh" style="display: none;">
+    <svg class="audio-icon audio-on" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+    </svg>
+    <svg class="audio-icon audio-off" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <line x1="23" y1="9" x2="17" y2="15"></line>
+      <line x1="17" y1="9" x2="23" y2="15"></line>
+    </svg>
+  </button>
+  <audio id="bg-music" loop preload="none">
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- ==================== MÀN 1: THIỆP CHÀO ==================== -->
+  <section id="screen-1" class="screen screen-active" aria-label="Màn chào thiệp 20/11">
+    <!-- Hoa văn nhẹ góc trên trái -->
+    <svg class="corner-ornament corner-top-left" viewBox="0 0 120 120" aria-hidden="true">
+      <path d="M0,0 Q60,10 90,50 Q110,80 120,120 Q80,100 50,80 Q20,60 0,0 Z" fill="var(--blue-200)" opacity="0.25" />
+      <path d="M0,0 Q30,50 60,70 Q40,40 0,0 Z" fill="var(--blue-400)" opacity="0.2" />
+      <circle cx="95" cy="45" r="4" fill="var(--blue-400)" opacity="0.3" />
+      <circle cx="50" cy="85" r="3" fill="var(--blue-200)" opacity="0.3" />
+    </svg>
+
+    <!-- Hoa văn nhẹ góc trên phải -->
+    <svg class="corner-ornament corner-top-right" viewBox="0 0 120 120" aria-hidden="true">
+      <path d="M120,0 Q60,10 30,50 Q10,80 0,120 Q40,100 70,80 Q100,60 120,0 Z" fill="var(--blue-200)" opacity="0.25" />
+      <path d="M120,0 Q90,50 60,70 Q80,40 120,0 Z" fill="var(--blue-400)" opacity="0.2" />
+      <circle cx="25" cy="45" r="4" fill="var(--blue-400)" opacity="0.3" />
+      <circle cx="70" cy="85" r="3" fill="var(--blue-200)" opacity="0.3" />
+    </svg>
+
+    <!-- Hoa văn nhẹ góc dưới trái -->
+    <svg class="corner-ornament corner-bottom-left" viewBox="0 0 120 120" aria-hidden="true">
+      <path d="M0,120 Q60,110 90,70 Q110,40 120,0 Q80,20 50,40 Q20,60 0,120 Z" fill="var(--blue-200)" opacity="0.25" />
+      <path d="M0,120 Q30,70 60,50 Q40,80 0,120 Z" fill="var(--blue-400)" opacity="0.2" />
+      <circle cx="95" cy="75" r="4" fill="var(--blue-400)" opacity="0.3" />
+    </svg>
+
+    <!-- Hoa văn nhẹ góc dưới phải -->
+    <svg class="corner-ornament corner-bottom-right" viewBox="0 0 120 120" aria-hidden="true">
+      <path d="M120,120 Q60,110 30,70 Q10,40 0,0 Q40,20 70,40 Q100,60 120,120 Z" fill="var(--blue-200)"
+        opacity="0.25" />
+      <path d="M120,120 Q90,70 60,50 Q80,80 120,120 Z" fill="var(--blue-400)" opacity="0.2" />
+      <circle cx="25" cy="75" r="4" fill="var(--blue-400)" opacity="0.3" />
+    </svg>
+
+    <!-- Container chứa bong bóng và trái tim xanh bay lên -->
+    <div id="floating-elements" class="floating-container" aria-hidden="true"></div>
+
+    <!-- Nội dung chính màn 1 -->
+    <div class="screen1-content">
+      <div class="badge-date">16 · 11 · 2026</div>
+
+      <!-- Dải ruy băng hoa văn mềm mại -->
+      <div class="ribbon-icon">
+        <svg viewBox="0 0 60 24" width="60" height="24" fill="none" stroke="var(--blue-400)" stroke-width="1.5"
+          stroke-linecap="round">
+          <path d="M6 12 C16 4, 24 20, 30 12 C36 4, 44 20, 54 12" />
+          <circle cx="30" cy="12" r="3" fill="var(--blue-400)" />
+        </svg>
+      </div>
+
+      <h1 id="screen1-title" class="screen1-title">Thông Điệp</h1>
+      <p id="screen1-subtitle" class="screen1-subtitle">Việt Nam 20/11</p>
+
+      <div class="recipient-box">
+        <span class="recipient-label">Kính tặng</span>
+        <h2 id="screen1-recipient" class="screen1-recipient">[TÊN THẦY/CÔ]</h2>
+      </div>
+
+      <button id="btn-open-card" class="btn-primary breathe-animation" aria-label="Mở thiệp chúc mừng">
+        <span>Mở thiệp ♥</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ==================== MÀN 2: BẦU TRỜI ĐÊM ==================== -->
+  <section id="screen-2" class="screen" aria-label="Màn bầu trời đêm sao sáng">
+    <!-- Canvas vẽ 80-120 sao và sao băng -->
+    <canvas id="sky-canvas"></canvas>
+
+    <!-- Dải núi xa 2 lớp tạo chiều sâu -->
+    <svg class="mountains-svg" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
+      <!-- Lớp núi xa (nhạt hơn, navy-700) -->
+      <path d="M0,190 Q180,90 380,160 T820,110 T1200,150 T1440,120 L1440,320 L0,320 Z" fill="var(--navy-700)"
+        opacity="0.6" />
+      <!-- Lớp núi gần (đậm hơn, navy-900) -->
+      <path d="M0,230 Q280,140 600,210 T1100,170 T1440,220 L1440,320 L0,320 Z" fill="var(--navy-900)" opacity="0.95" />
+    </svg>
+
+    <!-- Khu vực hoa sen phát sáng giữa màn hình -->
+    <div class="screen2-center">
+      <div id="lotus-button" class="lotus-wrapper" role="button" tabindex="0"
+        aria-label="Chạm vào bông sen để mở bức thư">
+        <!-- SVG Hoa sen thanh thoát với cánh xanh ngọc nhạt và viền cyan phát sáng -->
+        <svg class="lotus-svg" viewBox="0 0 140 100" width="140" height="100">
+          <defs>
+            <filter id="lotus-glow-filter" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="6" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+            <linearGradient id="petalGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" stop-color="var(--blue-400)" stop-opacity="0.6" />
+              <stop offset="60%" stop-color="var(--blue-200)" stop-opacity="0.9" />
+              <stop offset="100%" stop-color="var(--cyan-glow)" stop-opacity="1" />
+            </linearGradient>
+            <linearGradient id="centerGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" stop-color="var(--blue-600)" />
+              <stop offset="70%" stop-color="var(--blue-200)" />
+              <stop offset="100%" stop-color="var(--cyan-glow)" />
+            </linearGradient>
+          </defs>
+
+          <!-- Lá đỡ bên dưới hoa sen -->
+          <path d="M25,85 C45,72 95,72 115,85 C95,95 45,95 25,85 Z" fill="var(--navy-700)" stroke="var(--blue-400)"
+            stroke-width="1.5" opacity="0.8" />
+
+          <!-- Cánh ngoài tầng 1 (trái & phải) -->
+          <path class="petal petal-outer-left" d="M70,80 C30,70 12,45 20,28 C32,25 55,50 70,80 Z" fill="url(#petalGrad)"
+            stroke="var(--cyan-glow)" stroke-width="1.2" />
+          <path class="petal petal-outer-right" d="M70,80 C110,70 128,45 120,28 C108,25 85,50 70,80 Z"
+            fill="url(#petalGrad)" stroke="var(--cyan-glow)" stroke-width="1.2" />
+
+          <!-- Cánh tầng 2 (trung tâm vừa) -->
+          <path class="petal petal-mid-left" d="M70,80 C45,60 32,35 44,18 C58,16 68,45 70,80 Z" fill="url(#petalGrad)"
+            stroke="var(--cyan-glow)" stroke-width="1.2" />
+          <path class="petal petal-mid-right" d="M70,80 C95,60 108,35 96,18 C82,16 72,45 70,80 Z" fill="url(#petalGrad)"
+            stroke="var(--cyan-glow)" stroke-width="1.2" />
+
+          <!-- Cánh chính giữa vươn cao -->
+          <path class="petal petal-center" d="M70,80 C56,50 56,22 70,8 C84,22 84,50 70,80 Z" fill="url(#centerGrad)"
+            stroke="var(--cyan-glow)" stroke-width="1.5" />
+
+          <!-- Tâm nhụy sen phát sáng nhạt -->
+          <circle cx="70" cy="74" r="5" fill="var(--star-yellow)" opacity="0.9" />
+          <circle cx="64" cy="73" r="2" fill="var(--star-yellow)" opacity="0.8" />
+          <circle cx="76" cy="73" r="2" fill="var(--star-yellow)" opacity="0.8" />
+        </svg>
+
+        <!-- Hiệu ứng vòng hào quang tỏa ra dưới hoa sen -->
+        <div class="lotus-aura"></div>
+      </div>
+
+      <!-- Dòng gợi ý nhẹ nhàng phía dưới hoa sen -->
+      <p class="lotus-hint">Chạm vào bông sen</p>
+    </div>
+  </section>
+
+  <!-- ==================== MÀN 3 MỚI: MÃ QR ==================== -->
+  <section id="screen-3" class="screen" aria-label="Màn quét mã QR khám phá thêm">
+    <div class="qr-screen-container">
+      <h2 class="qr-screen-title">Quét mã để xem 💙</h2>
+
+      <div class="qr-grid">
+        <!-- Thẻ QR 1: Lời cảm ơn -->
+        <a href="noidung/loi-cam-on.html" class="qr-card" title="Xem Lời cảm ơn">
+          <div class="qr-image-wrapper">
+            <img src="assets/qr/loi-cam-on.png" alt="Mã QR Lời cảm ơn" class="qr-img" onerror="this.classList.add('qr-img-error'); this.nextElementSibling.classList.add('qr-fallback-visible');">
+            <div class="qr-fallback">
+              <span class="qr-fallback-icon">📱</span>
+              <span class="qr-fallback-text">Chưa có mã QR</span>
+            </div>
+          </div>
+          <span class="qr-label">Lời cảm ơn</span>
+        </a>
+
+        <!-- Thẻ QR 2: Thông điệp -->
+        <a href="noidung/thong-diep.html" class="qr-card" title="Xem Thông điệp">
+          <div class="qr-image-wrapper">
+            <img src="assets/qr/thong-diep.png" alt="Mã QR Thông điệp" class="qr-img" onerror="this.classList.add('qr-img-error'); this.nextElementSibling.classList.add('qr-fallback-visible');">
+            <div class="qr-fallback">
+              <span class="qr-fallback-icon">📱</span>
+              <span class="qr-fallback-text">Chưa có mã QR</span>
+            </div>
+          </div>
+          <span class="qr-label">Thông điệp</span>
+        </a>
+
+        <!-- Thẻ QR 3: Nguồn tham khảo -->
+        <a href="noidung/nguon-tham-khao.html" class="qr-card" title="Xem Nguồn tham khảo">
+          <div class="qr-image-wrapper">
+            <img src="assets/qr/nguon-tham-khao.png" alt="Mã QR Nguồn tham khảo" class="qr-img" onerror="this.classList.add('qr-img-error'); this.nextElementSibling.classList.add('qr-fallback-visible');">
+            <div class="qr-fallback">
+              <span class="qr-fallback-icon">📱</span>
+              <span class="qr-fallback-text">Chưa có mã QR</span>
+            </div>
+          </div>
+          <span class="qr-label">Nguồn tham khảo</span>
+        </a>
+
+        <!-- Thẻ QR 4: Bảng phân công -->
+        <a href="noidung/bang-phan-cong.html" class="qr-card" title="Xem Bảng phân công">
+          <div class="qr-image-wrapper">
+            <img src="assets/qr/bang-phan-cong.png" alt="Mã QR Bảng phân công" class="qr-img" onerror="this.classList.add('qr-img-error'); this.nextElementSibling.classList.add('qr-fallback-visible');">
+            <div class="qr-fallback">
+              <span class="qr-fallback-icon">📱</span>
+              <span class="qr-fallback-text">Chưa có mã QR</span>
+            </div>
+          </div>
+          <span class="qr-label">Bảng phân công</span>
+        </a>
+      </div>
+
+      <!-- 2 Nút hành động phía dưới lưới -->
+      <div class="qr-screen-actions">
+        <button id="btn-open-letter" class="btn-primary btn-read-letter" aria-label="Mở bức thư tri ân">
+          <span>Đọc thư 💌</span>
+        </button>
+        <button id="btn-back-to-screen2" class="btn-qr-back" aria-label="Quay lại bầu trời đêm">
+          <span>← Quay lại</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== BỨC THƯ (MÀN PHỤ / MODAL) ==================== -->
+  <div id="screen-letter" class="letter-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Bức thư tri ân Thầy Cô">
+    <div class="letter-modal-backdrop">
+      <article class="letter-card">
+        <!-- Nút đóng "×" tròn ở góc phải trên: quay về Màn QR -->
+        <button id="btn-close-letter" class="btn-close" aria-label="Đóng thư và quay lại màn mã QR">
+          <span>×</span>
+        </button>
+
+        <!-- Tiêu đề thư -->
+        <header class="letter-header">
+          <h2 id="letter-title" class="letter-title">Gửi [TÊN NGƯỜI NHẬN] – nhân ngày 20/11 🎉💙</h2>
+        </header>
+
+        <!-- Khung giấy thư có kẻ dòng cuộn được -->
+        <div id="letter-scroll" class="letter-scroll-area">
+          <div id="letter-text" class="letter-body"></div>
+
+          <!-- Chữ ký người gửi ở cuối thư -->
+          <footer class="letter-footer">
+            <p class="signature-label">Kính chúc Thầy Cô,</p>
+            <p id="letter-signature" class="signature-name">[TÊN CỦA TÔI]</p>
+          </footer>
+        </div>
+
+        <!-- Nút bỏ qua hiệu ứng gõ chữ -->
+        <div class="letter-controls">
+          <button id="btn-skip-typewriter" class="btn-skip" aria-label="Bỏ qua hiệu ứng gõ chữ và hiện toàn bộ">
+            Bỏ qua hiệu ứng
+          </button>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
