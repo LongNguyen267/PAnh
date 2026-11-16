@@ -1,27 +1,15 @@
-/**
- * ============================================================
- * OBJECT CHỨA TOÀN BỘ NỘI DUNG THIỆP 20/11
- * Bạn có thể dễ dàng sửa tên người nhận, người gửi hoặc dán lời chúc mới vào đây
- * mà không cần can thiệp vào mã nguồn bên dưới.
- * ============================================================
- */
 const CONTENT = {
-  // Tên người nhận (ví dụ: "Cô Lan", "Thầy Hùng", v.v.)
-  recipient: "Cô Lan",
+  recipient: "Thầy",
 
-  // Tên người gửi (ví dụ: "Phương Anh", "Học trò của Cô", v.v.)
-  sender: "Phương Anh",
+  sender: "Phương Anh, Hồng Hạnh, Quốc Huy, Minh Thư",
 
-  // Tiêu đề màn 1
-  screen1Title: "Chúc mừng ngày Nhà giáo",
+  screen1Title: "Cuộc Phiêu lưu kì thú",
   screen1Subtitle: "Việt Nam 20/11",
+  letter: `Nhân ngày Nhà giáo Việt Nam 20/11, em xin gửi đến Thầy lời tri ân sâu sắc và lòng biết ơn chân thành nhất.
 
-  // Lời chúc / Bức thư màn 3 (Giữ nguyên văn từng chữ, giữ nguyên xuống dòng)
-  letter: `Nhân ngày Nhà giáo Việt Nam 20/11, em xin gửi đến Cô lời tri ân sâu sắc và lòng biết ơn chân thành nhất.
+Cảm ơn Thầy vì những bài giảng tâm huyết, sự bao dung và kiên nhẫn dìu dắt chúng em trưởng thành qua từng ngày. Những bài học cùng niềm tin mà Thầy trao gửi sẽ mãi là hành trang quý giá theo em trên suốt chặng đường đời.
 
-Cảm ơn Cô vì những bài giảng tâm huyết, sự bao dung và kiên nhẫn dìu dắt chúng em trưởng thành qua từng ngày. Những bài học cùng niềm tin mà Cô trao gửi sẽ mãi là hành trang quý giá theo em trên suốt chặng đường đời.
-
-Kính chúc Cô luôn dồi dào sức khỏe, ngập tràn niềm vui, bình an và mãi giữ vững ngọn lửa nhiệt huyết với sự nghiệp trồng người cao quý!`
+Kính chúc Thầy luôn dồi dào sức khỏe, ngập tràn niềm vui, bình an và mãi giữ vững ngọn lửa nhiệt huyết với sự nghiệp trồng người cao quý!`
 };
 
 /* Biến trạng thái toàn cục */
@@ -56,10 +44,11 @@ const letterTitle = document.getElementById('letter-title');
 const letterSignature = document.getElementById('letter-signature');
 const screen1Recipient = document.getElementById('screen1-recipient');
 
-/* ============================================================
-   1. KHỞI TẠO NỘI DUNG VÀ MÀN 1
-   ============================================================ */
 function initContent() {
+  const screen1TitleEl = document.getElementById('screen1-title');
+  if (screen1TitleEl) {
+    screen1TitleEl.textContent = CONTENT.screen1Title;
+  }
   if (screen1Recipient) {
     screen1Recipient.textContent = CONTENT.recipient;
   }
@@ -68,6 +57,10 @@ function initContent() {
   }
   if (letterSignature) {
     letterSignature.textContent = CONTENT.sender;
+  }
+  const signatureLabel = document.querySelector('.signature-label');
+  if (signatureLabel) {
+    signatureLabel.textContent = `Kính chúc ${CONTENT.recipient},`;
   }
 }
 
@@ -107,9 +100,6 @@ function createFloatingElements() {
   }
 }
 
-/* ============================================================
-   2. HỆ THỐNG CHUYỂN MÀN HÌNH (Transition fade 0.8s)
-   ============================================================ */
 function goToScreen(screenNumber, instant = false) {
   // Ẩn tất cả màn
   [screen1, screen2, screen3].forEach((s) => {
@@ -148,9 +138,6 @@ function goToScreen(screenNumber, instant = false) {
   }
 }
 
-/* ============================================================
-   3. BẦU TRỜI ĐÊM: CANVAS SAO VÀ SAO BĂNG (MÀN 2 & MÀN 3)
-   ============================================================ */
 let stars = [];
 let shootingStars = [];
 let canvasWidth = 0;
@@ -302,9 +289,6 @@ function stopStarfield() {
   }
 }
 
-/* ============================================================
-   4. HIỆU ỨNG GÕ CHỮ CHO BỨC THƯ & ĐIỀU KHIỂN MODAL BỨC THƯ
-   ============================================================ */
 function revealFooter() {
   const letterFooter = document.querySelector('.letter-footer');
   if (letterFooter) letterFooter.classList.add('revealed');
@@ -399,9 +383,6 @@ function skipTypewriter() {
   revealFooter();
 }
 
-/* ============================================================
-   5. BỘ ĐIỀU KHIỂN NHẠC NỀN (Tự động kiểm tra file assets/music.mp3)
-   ============================================================ */
 function checkAndInitAudio() {
   if (!bgMusic) return;
 
@@ -441,7 +422,7 @@ function toggleAudio() {
   } else {
     bgMusic.play().then(() => {
       isAudioPlaying = true;
-    }).catch(() => {});
+    }).catch(() => { });
   }
   updateAudioIcon();
 }
@@ -456,9 +437,6 @@ function updateAudioIcon() {
   }
 }
 
-/* ============================================================
-   6. GẮN SỰ KIỆN TƯƠNG TÁC
-   ============================================================ */
 function attachEvents() {
   // Lần chạm đầu tiên bất kỳ để unlock autoplay nhạc
   document.addEventListener('pointerdown', startMusicOnUserGesture, { once: true });
